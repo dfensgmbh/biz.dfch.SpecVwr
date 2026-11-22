@@ -4,7 +4,7 @@ created: '2026-11-22T18:45:17.755+01:00'
 id: 99136108-dccf-45ba-a974-ded247d4a2c9
 status: draft
 type: tsk
-updated: '2026-11-22T18:55:52.803+01:00'
+updated: '2026-11-22T18:58:47.489+01:00'
 version: 1.0.0
 ---
 
@@ -60,9 +60,14 @@ plugin API has no function that calls an MCP tool. The result is in the note
 of QA 1.0040. Not tested: whether a plugin can start the SpecMgr MCP server
 itself; follow-up question 3.0060 now asks the maintainer about this.
 
+State: all work is on the branch `setup/specmgr`, which is pushed. PR #1
+(setup/specmgr into dev) is open, has no merge conflicts and waits for the
+approval of a second person (task 4). No code exists yet; the project is in
+requirements elicitation.
+
 Where to continue: task 11 (maintainer answers, now including the changed
 3.0060), then task 16 (decision on how SpecVwr reads the docs). Tasks 7 and
-8 can run in parallel.
+8 can run in parallel. Conventions are in AGENTS.md.
 
 ### 2026-11-22 17:50:58.910Z - Handover: current state and where to continue
 
