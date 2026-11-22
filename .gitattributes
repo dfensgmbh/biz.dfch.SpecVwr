@@ -1,0 +1,12 @@
+# Text files: store and check out with LF on Windows and WSL alike, so
+# files written by Windows tools (CRLF) do not show up as modified in WSL.
+* text=auto eol=lf
+
+# Binary documents: never convert line endings or diff as text
+*.pdf binary
+*.PDF binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.doc binary
+*.docx binary
