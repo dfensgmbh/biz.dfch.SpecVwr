@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "specmgr": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["--from", "biz-dfch-specmgr[mcp]>=0.14.0", "specmgr", "mcp"]
+    },
+    "asdste100": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["--from", "biz-dfch-asdste100mcp>=2.0.0", "asdste100-mcp"]
+    }
+  }
+}
