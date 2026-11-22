@@ -1,6 +1,6 @@
 # biz.dfch.SpecVwr
 Opencode plugin that shows biz.dfch.SpecMgr artifacts
 
-## Projekt
+## Project
 
-SpecVwr (Spec Viewer) ist ein MCP-Server, der specmgr-Artefakte (GOL, REQ, UC, ADR, DEC, RSK, TSK …) als klickbares Diagramm zeigt: Knoten sind Artefakte, Kanten sind Referenzen. Ein Klick auf einen Knoten öffnet das Artefakt mit Links zu den verbundenen Artefakten. Die erste Version ist rein lesend. Das Projekt ist das Hauptbeispiel für das Validierungsverfahren Informatikerin EFZ (Applikationsentwicklung). Anforderungen und Entscheide werden mit specmgr verwaltet (`.mcp.json`); die Nutzung von KI-Werkzeugen ist im specmgr-Dokument «KI-Nutzung im Projekt SpecVwr» protokolliert.
+SpecVwr (Spec Viewer) is an MCP server that shows specmgr artifacts (GOL, REQ, UC, ADR, DEC, RSK, TSK …) as a clickable diagram: nodes are artifacts, edges are references. A click on a node opens the artifact with links to the connected artifacts. The first version is read-only. The project is the main example for the Informatikerin EFZ validation procedure (application development). Requirements and decisions are managed with specmgr (`.mcp.json`). The use of AI tools is logged in a local specmgr document, "AI Usage in the SpecVwr Project", which is not part of the repository.

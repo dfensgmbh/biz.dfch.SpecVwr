@@ -156,5 +156,5 @@ vite.config.ts.timestamp-*
 .nx/workspace-data
 .nx/migrate-runs
 
-# KI-Nutzung log (specmgr TXT), kept local only
-docs/txt/txt-3b1b136f-b508-4eac-814e-87f7a7f25397-ki-nutzung-im-projekt-specvwr.md
+# AI usage log (specmgr TXT), kept local only
+docs/txt/txt-3b1b136f-b508-4eac-814e-87f7a7f25397-ai-usage-in-the-specvwr-project.md
