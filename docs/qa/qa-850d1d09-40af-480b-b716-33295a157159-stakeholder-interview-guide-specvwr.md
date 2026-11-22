@@ -4,7 +4,7 @@ created: '2026-11-22T17:12:51.304+01:00'
 id: 850d1d09-40af-480b-b716-33295a157159
 status: draft
 type: qa
-updated: '2026-11-22T18:31:30.529+01:00'
+updated: '2026-11-22T18:47:02.756+01:00'
 version: 1.0.0
 ---
 
@@ -25,9 +25,14 @@ Two stakeholder groups are interviewed:
 
 Each question has an HTML comment that names its audience (M or U). A
 question for both groups is split into one question per group: the M
-question keeps its number, the U question gets the next number. The
-answers are still open and will be recorded during the interviews.
-Interviewer: Irene Hofstetter. Dates: TODO.
+question keeps its number, the U question gets the next number. Questions
+with the comment "follow-up from the review" were added after the review of
+the maintainer answers.
+
+Interviewer: Irene Hofstetter. Dates:
+
+- Maintainer: 2026-11-22 (answers recorded); follow-up questions open.
+- Users: TODO (the answers are still open).
 
 ### Raw Requirements
 
@@ -191,6 +196,23 @@ TODO: answer pending
 SpecVwr supports the clipboard, so that a user can copy the UUID of a
 document.
 
+<!-- Audience: M; follow-up from the review of the maintainer answers -->
+
+> **1.0060**: Maintainer: 7.0010 names both the terminal interface
+> (`@opencode/plugin/tui`) and the desktop app (`./gui-experimental`). Which
+> one must the first version support? Is the other one needed before the
+> deadline?
+
+TODO: answer pending
+
+<!-- Audience: M; follow-up from the review of the maintainer answers -->
+
+> **1.0070**: Maintainer: Which acceptance criteria must the first version
+> meet? Draft from 0.0020: a user can search, filter and sort the docs, and
+> follow the references between them.
+
+TODO: answer pending
+
 ## Performance Efficiency
 
 <!-- Audience: M -->
@@ -204,6 +226,14 @@ references (about 20 on average). Tables must support paging.
 <!-- Audience: U -->
 
 > **2.0020**: How long can it take until the table is shown?
+
+TODO: answer pending
+
+<!-- Audience: M; follow-up from the review of the maintainer answers -->
+
+> **2.0030**: Maintainer: Search, filter and sort must cover all docs, not
+> only the page that is shown (see 2.0010). How long can a search, a filter
+> or a sort take with some thousands of docs?
 
 TODO: answer pending
 
@@ -253,6 +283,23 @@ are available.
 
 TODO: answer pending
 
+<!-- Audience: M; follow-up from the review of the maintainer answers -->
+
+> **3.0050**: Maintainer: `SPECMGR_DOCS_DIR` does not apply to all types:
+> ADRs use `SPECMGR_ADR_DIR` (default `docs/adr`) and FEATs use
+> `SPECMGR_FEAT_DIR` (default `.specmgr/feat`). Must SpecVwr show ADRs and
+> FEATs, and must it read these variables too?
+
+TODO: answer pending
+
+<!-- Audience: M; follow-up from the review of the maintainer answers -->
+
+> **3.0060**: Maintainer: If an OpenCode plugin can call MCP tools after all
+> (see the note in 1.0040), should SpecVwr read the docs through the SpecMgr
+> MCP server instead of parsing the Markdown files itself?
+
+TODO: answer pending
+
 ## Interaction Capability
 
 <!-- Audience: U -->
@@ -270,6 +317,15 @@ an architect.)
 
 TODO: answer pending
 
+<!-- Audience: M; follow-up from the review of the maintainer answers -->
+
+> **4.0030**: Maintainer: 4.0010 answers only the language. 7.0010 asks for
+> end-to-end tests with an accessibility check. Which accessibility
+> requirements apply (for example keyboard-only use, contrast, colour
+> blindness, screen readers, a standard such as WCAG)?
+
+TODO: answer pending
+
 ## Reliability
 
 <!-- Audience: M -->
@@ -283,6 +339,22 @@ Show a warning. If SpecMgr gives an error, show the error.
 
 > **5.0011**: User: What should happen when an artifact is invalid or a
 > reference points to a missing artifact?
+
+TODO: answer pending
+
+<!-- Audience: M; follow-up from the review of the maintainer answers -->
+
+> **5.0020**: Maintainer: 5.0010 says "If SpecMgr gives an error, show the
+> error". SpecVwr reads the files directly and does not call SpecMgr (see
+> 3.0010). Which errors do you mean?
+
+TODO: answer pending
+
+<!-- Audience: M; follow-up from the review of the maintainer answers -->
+
+> **5.0030**: Maintainer: 5.0010 says that an invalid artifact or a missing
+> reference shows a warning, and 9.0010 says that missing data shows an
+> error. When does SpecVwr show a warning, and when an error?
 
 TODO: answer pending
 
@@ -304,6 +376,15 @@ environments.
 > to a diagram service?
 
 No. No data leaves the local computer. There is no exception.
+
+<!-- Audience: M; follow-up from the review of the maintainer answers -->
+
+> **6.0030**: Maintainer: OpenCode sends the content of the chat to an AI
+> model provider. Must SpecVwr make sure that the content of the docs never
+> gets into the chat (for example as a tool result), so that classified
+> content does not leave the computer?
+
+TODO: answer pending
 
 ## Maintainability
 
