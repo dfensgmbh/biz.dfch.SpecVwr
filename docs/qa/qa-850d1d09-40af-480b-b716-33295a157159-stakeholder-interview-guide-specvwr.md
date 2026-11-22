@@ -4,7 +4,7 @@ created: '2026-11-22T17:12:51.304+01:00'
 id: 850d1d09-40af-480b-b716-33295a157159
 status: draft
 type: qa
-updated: '2026-11-22T18:47:02.756+01:00'
+updated: '2026-11-22T18:55:40.745+01:00'
 version: 1.0.0
 ---
 
@@ -171,15 +171,27 @@ OpenCode plugin framework cannot make tool calls into MCP servers, and the
 SpecMgr MCP server is the only system that is permitted to change SpecMgr
 docs.
 
-Note: the reason "cannot make tool calls into MCP servers" is not confirmed.
-The OpenCode documentation ([plugins](https://opencode.ai/docs/plugins/),
-[MCP servers](https://opencode.ai/docs/mcp-servers/),
-[SDK](https://opencode.ai/docs/sdk/)) and the
-[plugin API README](https://github.com/anomalyco/opencode/blob/dev/packages/plugin/src/README.md)
-do not say whether a plugin can call MCP tools. For MCP, the plugin API
-documents only how to change and reload the configuration (`ctx.mcp.transform`,
-`ctx.mcp.reload()`). TODO: confirm in the OpenCode source code or with the
-OpenCode maintainers.
+Note: checked in the OpenCode source code on 2026-11-22 (repository
+`anomalyco/opencode`, branch `dev`, commit
+[6d978e2](https://github.com/anomalyco/opencode/tree/6d978e2ee5aea27a87ff57a65859db87e72857e1/packages/plugin/src)).
+Result: the plugin API has no function that calls a tool of an MCP server.
+
+- `ctx.mcp` (`MCPDomain` in `promise/mcp.ts`) has only `list`, `transform`
+  (change the MCP server configuration) and `reload`.
+- `ctx.tool` (`ToolDomain` in `promise/tool.ts`) can add, change, remove and
+  list tools, and has hooks before and after a tool runs. It has no
+  function that calls a tool.
+- `ctx.session.prompt` can start a session prompt, so that the AI model
+  calls the tool. This is not permitted for SpecVwr, because the content
+  then goes to the AI model provider (see 6.0020).
+
+So the reason in this answer is confirmed for the OpenCode plugin API.
+
+Not checked: plugins run in the OpenCode process ("in-process" in the
+plugin API README), and the source code shows no sandbox. A plugin could
+then possibly start the SpecMgr MCP server itself (as `uvx ... specmgr mcp`,
+see `.mcp.json`) and call its tools with an MCP client library, without
+the OpenCode API. This was not tested. See 3.0060.
 
 <!-- Audience: U -->
 
@@ -294,9 +306,10 @@ TODO: answer pending
 
 <!-- Audience: M; follow-up from the review of the maintainer answers -->
 
-> **3.0060**: Maintainer: If an OpenCode plugin can call MCP tools after all
-> (see the note in 1.0040), should SpecVwr read the docs through the SpecMgr
-> MCP server instead of parsing the Markdown files itself?
+> **3.0060**: Maintainer: The OpenCode plugin API cannot call MCP tools (see
+> the note in 1.0040). SpecVwr could possibly start the SpecMgr MCP server
+> itself and read the docs through it, instead of parsing the Markdown
+> files itself. Is this permitted, and is it preferred?
 
 TODO: answer pending
 

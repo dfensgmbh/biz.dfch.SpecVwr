@@ -4,7 +4,7 @@ created: '2026-11-22T18:45:17.755+01:00'
 id: 99136108-dccf-45ba-a974-ded247d4a2c9
 status: draft
 type: tsk
-updated: '2026-11-22T18:51:12.045+01:00'
+updated: '2026-11-22T18:55:52.803+01:00'
 version: 1.0.0
 ---
 
@@ -37,7 +37,7 @@ current state and where to continue. -->
 
 - [ ] Task 11: Get the maintainer's answers to the follow-up questions in the QA (1.0060, 1.0070, 2.0030, 3.0050, 3.0060, 4.0030, 5.0020, 5.0030, 6.0030)
 
-- [ ] Task 12: Confirm whether an OpenCode plugin can call MCP tools, in the OpenCode source code or with the OpenCode maintainers (TODO in QA 1.0040)
+- [x] Task 12: Confirm whether an OpenCode plugin can call MCP tools, in the OpenCode source code or with the OpenCode maintainers (TODO in QA 1.0040)
 
 - [ ] Task 13: Select the SpecMgrDemo CI gates that apply to SpecVwr (TODO in QA 7.0010)
 
@@ -52,6 +52,17 @@ current state and where to continue. -->
 ## Recent Updates
 
 <!-- Newest entry first -- prepend new entries directly below this comment. -->
+
+### 2026-11-22 17:55:42.322Z - Task 12 done: plugins cannot call MCP tools
+
+Checked in the OpenCode source code (branch `dev`, commit 6d978e2): the
+plugin API has no function that calls an MCP tool. The result is in the note
+of QA 1.0040. Not tested: whether a plugin can start the SpecMgr MCP server
+itself; follow-up question 3.0060 now asks the maintainer about this.
+
+Where to continue: task 11 (maintainer answers, now including the changed
+3.0060), then task 16 (decision on how SpecVwr reads the docs). Tasks 7 and
+8 can run in parallel.
 
 ### 2026-11-22 17:50:58.910Z - Handover: current state and where to continue
 
